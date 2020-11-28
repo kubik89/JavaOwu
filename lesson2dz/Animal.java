@@ -5,18 +5,23 @@ public class Animal {
     String food;
     String location;
 
-    public Animal () {}
+    public Animal() {
+    }
+
     public Animal(String name, String food, String location) {
     }
 
-    public void makeNoise () {
-        System.out.println("Такое-то животное спит");
-    }
-    public void eat () {
+    public void makeNoise() {
 
+        System.out.println("Тварина видає голос");
     }
-    public void sleep () {
 
+    public void eat() {
+        System.out.println("Тварина їсть");
+    }
+
+    public void sleep() {
+        System.out.println("Тварина спить");
     }
 
 }

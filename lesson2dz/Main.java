@@ -17,30 +17,11 @@ public class Main {
         animal[6] = new Horse(true, "grass", "Zhmerynka", "Biljash");
         animal[7] = new Horse(true, "Water", "Kharkiv", "Strybun");
         animal[8] = new Horse(true, "Chips", "Poltava", "Kaplia");
+        Veterinary v1 = new Veterinary();
 
         for (int i = 0; i < animal.length; i++) {
             System.out.println("Прийом тварини №" + i);
-            System.out.println(
-                    "Ім'я - " + animal[i].name +
-                    " Знаходження - " + animal[i].location +
-                    " Їда - " + animal[i].food
-            );
-
+            v1.treatAnimal(animal[i].name, animal[i].food, animal[i].location);
         }
-
-
-//        Dog dog1 = new Dog(true, "dry food OpteMeal", "Lviv");
-//        Dog dog2 = new Dog(true, "dry food Sweety", "Kyiv");
-//        Dog dog3 = new Dog(true, "dry food MyKorm", "Stryi");
-
-//        Cat cat1 = new Cat(true, "dry food KittyCat","Mykolaiv");
-//        Cat cat2 = new Cat(true, "Milk","Drohobych");
-//        Cat cat3 = new Cat(true, "mouse","Odesa");
-
-//        Horse horse1 = new Horse(true, "grass", "Zhmerynka");
-//        Horse horse2 = new Horse(true, "Water", "Kharkiv");
-//        Horse horse3 = new Horse(true, "Chips", "Poltava");
-
-
     }
 }

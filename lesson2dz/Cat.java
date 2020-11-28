@@ -3,8 +3,6 @@ package lesson2dz;
 public class Cat extends Animal {
     boolean sayMiau;
 
-    public Cat () {}
-
     public Cat (boolean sayMiau, String food, String location, String name) {
         super(food, location, name);
         this.food=food;
@@ -17,5 +15,8 @@ public class Cat extends Animal {
 
     public void makeNoise() {
         System.out.println("Кішка спить");
+    }
+    public void eat() {
+        System.out.println("Кішка їсть");
     }
 }

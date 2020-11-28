@@ -1,9 +1,7 @@
 package lesson2dz;
 
 public class Horse extends Animal {
-    boolean canEatGrass;
-
-    public Horse () {}
+    private boolean canEatGrass;
 
     public Horse (boolean canEatGrass, String food, String location, String name) {
         super(food, location, name);
@@ -13,7 +11,15 @@ public class Horse extends Animal {
         this.canEatGrass = canEatGrass;
     }
 
+    public boolean isCanEatGrass() {
+        return canEatGrass;
+    }
+
     public void makeNoise() {
         System.out.println("Кінь спить");
+    }
+
+    public void eat() {
+        System.out.println("Кінь їсть");
     }
 }
