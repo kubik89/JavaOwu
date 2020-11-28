@@ -20,7 +20,7 @@ public class Main {
         Veterinary v1 = new Veterinary();
 
         for (int i = 0; i < animal.length; i++) {
-            System.out.println("Прийоом тварини № " + i);
+            System.out.println("Прийоооом тварини № " + i);
             v1.treatAnimal(animal[i].name, animal[i].food, animal[i].location);
         }
     }
