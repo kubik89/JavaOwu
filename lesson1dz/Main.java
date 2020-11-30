@@ -83,7 +83,7 @@ public class Main {
         }
         System.out.println("вік всіх з допомогою масиву " + countAge);
 
-//        Метод 2
+//        Метод 2 (ітерую всіх User > Всі age додаю в ArrayList > ітерую всі age в цьому ArrayList і додаю кожен до count)
 //        ArrayList<Integer> ages = new ArrayList<>();
 //        for (User value : user) {
 //            ages.add(value.age);
@@ -94,7 +94,7 @@ public class Main {
 //        }
 //        System.out.println("вік всіх з допомогою ArrayList " + newAge);
 
-//        Метод 3
+//        Метод 3 (Всі обєкти засунув в ArrayList > ітерую і переоприділяю о як User для отримання доступу до його полів)
         ArrayList<User> myInfo = new ArrayList<>();
         myInfo.add(u1);
         myInfo.add(u2);
@@ -140,7 +140,7 @@ public class Main {
         for (int i = 0; i < cars.length; i++) {
             countEngine += cars[i].engine;
         }
-        System.out.println("Об'єми всіх двигуніввв - " + countEngine);
+        System.out.println("Об'єми всіх двигунів - " + countEngine);
 
 //        Скласти між собою значення їх потужностей і вивести в консоль.
 
