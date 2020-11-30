@@ -1,7 +1,5 @@
 package lesson2dz;
 
-import dz24112020.Car;
-
 import java.util.ArrayList;
 
 public class Main {
