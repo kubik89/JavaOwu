@@ -1,12 +1,12 @@
 package lesson2dz;
 
-public class Veterinary extends Animal {
+public class Veterinary {
 
     public void treatAnimal(String name, String food, String location) {
         System.out.println(
                 "Картка пацієнта: \n" +
-                " Ім'я: " + name +
-                " Харчування: " + food +
-                " Місце проживання " + location);
+                " Ім'я: " + name + "; \n" +
+                " Харчування: " + food + "; \n" +
+                " Місце проживання: " + location);
     }
 }
