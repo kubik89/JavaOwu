@@ -140,7 +140,7 @@ public class Main {
         for (int i = 0; i < cars.length; i++) {
             countEngine += cars[i].engine;
         }
-        System.out.println("Об'єми всіх двигунів - " + countEngine);
+        System.out.println("Об'єми всіх двигуніввв - " + countEngine);
 
 //        Скласти між собою значення їх потужностей і вивести в консоль.
 
