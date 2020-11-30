@@ -1,8 +1,12 @@
 package lesson1dz;
 
+import folder2.User1;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Main {
+
     public static void main(String[] args) {
 
 //        1. Створити 10 цілочисленних змінних
@@ -80,15 +84,33 @@ public class Main {
         System.out.println("вік всіх з допомогою масиву " + countAge);
 
 //        Метод 2
-        ArrayList<Integer> ages = new ArrayList<>();
-        for (User value : user) {
-            ages.add(value.age);
+//        ArrayList<Integer> ages = new ArrayList<>();
+//        for (User value : user) {
+//            ages.add(value.age);
+//        }
+//        int newAge = 0;
+//        for (int i = 0; i < ages.size(); i++) {
+//            newAge = ages.get(i) + newAge;
+//        }
+//        System.out.println("вік всіх з допомогою ArrayList " + newAge);
+
+//        Метод 3
+        ArrayList<User> myInfo = new ArrayList<>();
+        myInfo.add(u1);
+        myInfo.add(u2);
+        myInfo.add(u3);
+        myInfo.add(u4);
+        myInfo.add(u5);
+        myInfo.add(u6);
+        myInfo.add(user[2]);
+
+        double countAge1 = 0;
+        for (Object o : myInfo) {
+            User st = (User) o;
+            countAge1+=st.age;
+            System.out.println(st.name + ", " + st.surname + ", " + st.id);
         }
-        int newAge = 0;
-        for (int i = 0; i < ages.size(); i++) {
-            newAge = ages.get(i) + newAge;
-        }
-        System.out.println("вік всіх з допомогою ArrayList " + newAge);
+        System.out.println(countAge1);
 
 //        Скласти між собою значення їх ваги і вивести в консоль.
 

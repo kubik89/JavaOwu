@@ -22,6 +22,6 @@ public class User {
     }
 
     public String toString() {
-        return id+" ," + age+" ," + name + " ," + surname+" ," + weight + " ," + height + " ,";
+        return id+", " + age+", " + name + ", " + surname+", " + weight + ", " + height + ", ";
     }
 }
