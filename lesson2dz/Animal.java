@@ -20,15 +20,7 @@ public class Animal {
         return name;
     }
 
-    public String getFood() {
-        return food;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public String animal() {
+    public String animal1() {
         return
                 "Картка пацієнта: \n" +
                         " Ім'я: " + name + "; \n" +
