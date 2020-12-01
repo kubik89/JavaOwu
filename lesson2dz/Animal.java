@@ -5,10 +5,35 @@ public class Animal {
     String food;
     String location;
 
-    public Animal() {
+    public Animal(String name, String food, String location) {
+        this.name = name;
+        this.food = food;
+        this.location = location;
     }
 
-    public Animal(String name, String food, String location) {
+    @Override
+    public String toString() {
+        return name + food + location;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getFood() {
+        return food;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String animal() {
+        return
+                "Картка пацієнта: \n" +
+                        " Ім'я: " + name + "; \n" +
+                        " Харчування: " + food + "; \n" +
+                        " Місце проживання: " + location;
     }
 
     public void makeNoise() {

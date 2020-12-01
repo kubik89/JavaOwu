@@ -19,7 +19,7 @@ public class Main {
 
         for (int i = 0; i < animal.length; i++) {
             System.out.println("Прийом тварини № " + i);
-            v1.treatAnimal(animal[i].name, animal[i].food, animal[i].location);
+            v1.treatAnimal(animal[i]);
         }
     }
 }
