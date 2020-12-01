@@ -23,7 +23,7 @@ public class Animal {
     public String animal1() {
         return
                 "Картка пацієнта: \n" +
-                        " Ім'я: " + name + "; \n" +
+                        " Ім'яя: " + name + "; \n" +
                         " Харчування: " + food + "; \n" +
                         " Місце проживання: " + location;
     }
