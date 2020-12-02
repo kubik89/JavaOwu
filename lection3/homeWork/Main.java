@@ -20,7 +20,6 @@ public class Main {
             if (printable instanceof Book) {
                 Book.printBooks(((Book) printable).getName());
             } else {
-                System.out.println("I'm a magazine");
                 Magazine.printMagazine(((Magazine) printable).getName());
             }
         }
