@@ -7,6 +7,6 @@ public class Dress extends Shoes implements WomanShoes{
 
     @Override
     public void takeShoeforWomen() {
-
+        System.out.println("Це жіночий метод takeShoeforWomen");
     }
 }

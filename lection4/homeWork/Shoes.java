@@ -1,6 +1,6 @@
 package lection4.homeWork;
 
-public class Shoes {
+public abstract class Shoes {
 
     private Size size;
     private int price;
@@ -10,5 +10,26 @@ public class Shoes {
         this.size = size;
         this.price = price;
         this.color = color;
+    }
+
+    public Size getSize() {
+        return size;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    @Override
+    public String toString() {
+        return "Shoes{" +
+                "size=" + size +
+                ", price=" + price +
+                ", color='" + color + '\'' +
+                '}';
     }
 }
