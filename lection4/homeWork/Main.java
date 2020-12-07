@@ -56,7 +56,7 @@ public class Main {
         for (Object shoes : myShoesList) {
             Atelier st = (Atelier) shoes;
             if (st.getShoes() instanceof WomanShoes && st.getShoes() instanceof MenShoes) {
-                System.out.println("Цей одяг спільний для чоловіків і жінок");
+                System.out.println("Цей одяг спільний для чоловіків та жінок");
             } else if (st.getShoes() instanceof WomanShoes) {
             st.getWomanShoes();
                 System.out.println(st.getShoes());
