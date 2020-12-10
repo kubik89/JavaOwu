@@ -1,45 +1,47 @@
 package lection5.HomeWork;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Store {
-    Product list;
 
-    public Product getList() {
-        return list;
+    List<Product> prodList = new ArrayList<>();
+
+    public List<Product> getProdList() {
+        return prodList;
     }
 
-    public void setList(Product list) {
-        this.list = list;
+    public void setProdList(List<Product> prodList) {
+        this.prodList = prodList;
     }
 
-    public Product addToShopNew(String name, int price, ProductType type) {
+    public boolean addToShopNew(String name, int price, ProductType type) {
         if (price > 0) {
             for (int j = 0; j <= 9; j++) {
                 String number = Integer.toString(j);
                 if (name.contains(number)) {
-                    return null;
+                    return false;
                 }
             }
-            return new Product(name, price, type);
-        } else return null;
+            return prodList.add(new Product(name, price, type));
+        }
+        return false;
     }
 
-    public void deleteFromShopByName(String name) {
-        if (getList().getName().equals(name)) {
-            System.out.println("Знайдено" + getList().getName());
+    public void getNameByFood(String name) {
+        for (int i = 0; i < prodList.size(); i++) {
+            if (prodList.get(i).getName().equals(name)) {
+                prodList.remove(prodList.get(i));
+            }
         }
-//        return getList().getName().indexOf(name);
-    }
-    public int getIntByPrice (int price) {
-        if (getList().getPrice() == price) {
-            return getList().getName().length();
-        }
-        return getList().getName().length();
     }
 
-    @Override
-    public String toString() {
-        return "Store{" +
-                "list=" + list +
-                '}';
+    public void increasePrice (ProductType type) {
+        for (int i = 0; i < prodList.size(); i++) {
+            if (prodList.get(i).getType()==type) {
+                prodList.get(i).setPrice(prodList.get(i).getPrice()*2);
+                System.out.println(prodList.get(i).getPrice());
+            }
+        }
     }
 }

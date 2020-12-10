@@ -7,6 +7,8 @@ public class Product extends Store{
     private int price;
     private ProductType type;
 
+    public Product () {}
+
     public Product(String name, int price, ProductType type) {
         this.name = name;
         this.price = price;
@@ -35,10 +37,6 @@ public class Product extends Store{
 
     public void setType(ProductType type) {
         this.type = type;
-    }
-
-    public Product someFunction (String name, int price, ProductType type) {
-        return new Product(name, price, type);
     }
 
     @Override
