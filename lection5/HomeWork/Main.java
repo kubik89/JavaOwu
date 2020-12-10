@@ -23,8 +23,10 @@ public class Main {
         products.addToShopNew("Зефір", 90, ProductType.SWEETS);
 
         products.getNameByFood("Горілка");
-//        System.out.println(products.getProdList());
         products.increasePrice(ProductType.ALCOHOL);
+        products.premiumFoods(100);
+        products.sumFoodByType(ProductType.SWEETS);
+        products.avgSumAllGoods();
 
 
 
