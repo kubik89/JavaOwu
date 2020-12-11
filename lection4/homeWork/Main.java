@@ -40,6 +40,7 @@ public class Main {
         myShoesList.add(new Atelier(dress2));
         myShoesList.add(new Atelier(dress3));
 
+
         for (Object shoes : myShoesList) {
             Atelier st = (Atelier) shoes;
             if (st.getShoes() instanceof WomanShoes && st.getShoes() instanceof MenShoes) {
