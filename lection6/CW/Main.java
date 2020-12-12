@@ -3,6 +3,7 @@ package lection6.CW;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
@@ -27,6 +28,10 @@ public class Main {
         LocalDate localDate1 = LocalDate.now();
         LocalDate localDate2 = LocalDate.parse("2020-12-24");
         LocalDate localDate3 = LocalDate.parse("20201224", DateTimeFormatter.ofPattern("yyyyMMdd"));
+
+        String localTime1 = "15:58";
+        LocalTime newLocalTime = LocalTime.parse(localTime1, DateTimeFormatter.ofPattern("HH:mm"));
+        System.out.println(newLocalTime);
 
 //        System.out.println(localDate1);
 //        System.out.println(localDate1.lengthOfMonth());
