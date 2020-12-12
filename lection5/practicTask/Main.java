@@ -19,14 +19,10 @@ public class Main {
         addAnimalForParticipant(1, pet1, map);
         addAnimalForParticipant(2, pet2, map);
         removeAnimalFromParticipant(2, map);
-
         deleteParticipantFromClub(2, map);
+        deleteSomeAnimalFromAllParticipants(2, "Cat1", map);
 
         printMap(map);
-
-        ZooClub zooClub1 = new ZooClub(map);
-
-//        System.out.println(zooClub1.getClub());
     }
 
     public static void addAnimalForParticipant(int personId, Pet pet, Map<Person, List<Pet>> map) {
@@ -58,6 +54,17 @@ public class Main {
     public static void deleteParticipantFromClub(int personId, Map<Person, List<Pet>> map) {
         Set<Person> people = map.keySet();
         people.removeIf(person -> person.getId() == personId);
+    }
+
+    public static void deleteSomeAnimalFromAllParticipants(int petAge, String petName, Map<Person, List<Pet>> map) {
+        Set<Person> people = map.keySet();
+        for (Person person : people) {
+            for (int i = 0; i < map.get(person).size(); i++) {
+                if (map.get(person).contains(new Pet(petName, petAge))) {
+                    map.get(person).clear();
+                }
+            }
+        }
     }
 
     public static void printMap(Map<Person, List<Pet>> map) {
