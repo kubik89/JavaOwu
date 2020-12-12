@@ -20,7 +20,7 @@ public class Main {
         addAnimalForParticipant(2, pet2, map);
         removeAnimalFromParticipant(2, map);
 
-        deleteParticipantFromClub(1, map);
+        deleteParticipantFromClub(2, map);
 
         printMap(map);
 
@@ -57,15 +57,8 @@ public class Main {
 
     public static void deleteParticipantFromClub(int personId, Map<Person, List<Pet>> map) {
         Set<Person> people = map.keySet();
-        for (Person person : people) {
-            if (person.getId() == personId) {
-                System.out.println("Знайдено - " + person);
-
-            }
-        }
+        people.removeIf(person -> person.getId() == personId);
     }
-//        }
-//    }
 
     public static void printMap(Map<Person, List<Pet>> map) {
         Set<Map.Entry<Person, List<Pet>>> entries = map.entrySet();
