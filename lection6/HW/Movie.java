@@ -1,14 +1,12 @@
 package lection6.HW;
 
-import java.time.Duration;
-
-public class Movie implements Comparable<Duration>{
+public class Movie implements Comparable<Time>{
     private String title;
-    private Duration duration;
+    private Time duration;
 
     public Movie() {};
 
-    public Movie(String title, Duration duration) {
+    public Movie(String title, Time duration) {
         this.title = title;
         this.duration = duration;
     }
@@ -21,16 +19,17 @@ public class Movie implements Comparable<Duration>{
         this.title = title;
     }
 
-    public Duration getDuration() {
+    public Time getDuration() {
         return duration;
     }
 
-    public void setDuration(Duration duration) {
+    public void setDuration(Time duration) {
         this.duration = duration;
     }
 
+
     @Override
-    public int compareTo(Duration duration) {
+    public int compareTo(Time time) {
         return 0;
     }
 }

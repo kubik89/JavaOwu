@@ -20,9 +20,7 @@ public class Time {
     }
 
     public void setMin(int min) {
-        if (min >=0 && min <= 23) {
         this.min = min;
-        }
     }
 
     public int getHour() {
@@ -41,6 +39,15 @@ public class Time {
 
     public void setNewLocalTime(LocalTime newLocalTime) {
         this.newLocalTime = newLocalTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Time{" +
+                "hour=" + hour +
+                ", min=" + min +
+                ", newLocalTime=" + newLocalTime +
+                '}';
     }
 }
 
