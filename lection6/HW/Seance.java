@@ -13,11 +13,8 @@ public class Seance {
     public Seance(Movie movie, Time startTime) {
         this.movie = movie;
         this.startTime = startTime;
-
-        String endTimeNew = this.getStartTime() + ":" + movie.getDuration(); // тут не стрінги додавати треба!
-        this.endTime = LocalTime.parse(endTimeNew, DateTimeFormatter.ofPattern("HH:mm"));
-//    getMovie().getDuration().getNewLocalTime();
-//        + movie.getDuration()
+        this.endTime = this.getStartTime().getNewLocalTime().plusHours(movie.getDuration().getNewLocalTime().getHour())
+                .plusMinutes(movie.getDuration().getNewLocalTime().getMinute());
     }
 
     public Movie getMovie() {

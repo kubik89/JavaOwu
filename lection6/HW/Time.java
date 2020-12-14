@@ -12,7 +12,7 @@ public class Time {
         this.min = min;
         this.hour = hour;
         String localTime1 = this.getHour() + ":" + this.getMin();
-        this.newLocalTime = LocalTime.parse(localTime1, DateTimeFormatter.ofPattern("HH:mm"));
+        this.newLocalTime = LocalTime.parse(localTime1, DateTimeFormatter.ofPattern("H:m"));
     }
 
     public int getMin() {
