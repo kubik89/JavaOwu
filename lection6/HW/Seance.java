@@ -4,11 +4,16 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Set;
+import java.util.TreeSet;
 
-public class Seance {
+public class Seance implements Comparable<Seance> {
     private Movie movie;
     private Time startTime;
     private LocalTime endTime;
+
+
+    public Seance() {};
 
     public Seance(Movie movie, Time startTime) {
         this.movie = movie;
@@ -41,7 +46,24 @@ public class Seance {
         this.endTime = endTime;
     }
 
+    @Override
+    public String toString() {
+        return "Seance{" +
+                "movie=" + movie +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                '}';
+    }
 
+    @Override
+    public int compareTo(Seance seance) {
+        int compareHour = this.getStartTime().getHour()-seance.getStartTime().getHour();
+        int compareMin = this.getStartTime().getMin()-seance.getStartTime().getMin();
+        if (compareHour != 0 && compareMin != 0) {
+            return compareHour;
+        }
+        return 0;
+    }
 
 
 }

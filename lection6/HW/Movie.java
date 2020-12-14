@@ -1,6 +1,6 @@
 package lection6.HW;
 
-public class Movie implements Comparable<Time>{
+public class Movie {
     private String title;
     private Time duration;
 
@@ -27,9 +27,11 @@ public class Movie implements Comparable<Time>{
         this.duration = duration;
     }
 
-
     @Override
-    public int compareTo(Time time) {
-        return 0;
+    public String toString() {
+        return "Movie{" +
+                "title='" + title + '\'' +
+                ", duration=" + duration +
+                '}';
     }
 }
