@@ -24,29 +24,29 @@ public class Main {
         Movie movie3 = new Movie("Movie3", new Time(22, 15));
 
         Seance seance1 = new Seance(movie1, time1);
-//        Seance seance2 = new Seance(movie2, time2);
-//        Seance seance3 = new Seance(movie3, time3);
+        Seance seance2 = new Seance(movie2, time2);
+        Seance seance3 = new Seance(movie3, time3);
 //        System.out.println(seance1.getEndTime());
 
 //        Set<Seance> seanceSet = new TreeSet<>();
 
         Schedule schedules = new Schedule();
-        schedules.addSeance(movie1, time1);
-        schedules.addSeance(movie2, time2);
-
+        schedules.addSeanceForSchedule(movie1, time1);
+        schedules.addSeanceForSchedule(movie2, time2);
+        schedules.addSeanceForSchedule(movie3, time3);
         System.out.println(schedules.getSeanceSet());
 
-        schedules.removeSeance("Movie2");
+        schedules.removeSeanceFromShedule("Movie2");
         System.out.println(schedules.getSeanceSet());
 //
-//        Cinema cinema1 = new Cinema(open1, close1);
-//        cinema1.addSeance("FRIDAY", seance1);
+        Cinema cinema1 = new Cinema(open1, close1);
+        cinema1.addSeanceForCinema("FRIDAY", seance1);
 //        cinema1.addSeances("MONDAY", new Seance(movie1, time1));
 
 
 //        TreeMap<WeekDays, Schedule> schedule = new TreeMap<>();
-//        schedule.put(WeekDays.MONDAY, schedule1);
-//        schedule.put(WeekDays.TUESDAY, schedule2);
+//        schedule.put(WeekDays.MONDAY, schedules);
+//        schedule.put(WeekDays.TUESDAY, schedules);
 //        System.out.println(schedule);
 
 

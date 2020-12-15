@@ -6,7 +6,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Cinema implements Comparable<Seance> {
-    private TreeMap<WeekDays, Schedule> schedule = new TreeMap<>();
+    private TreeMap<WeekDays, Seance> schedule = new TreeMap<>();
     private Time open;
     private Time close;
 
@@ -15,7 +15,7 @@ public class Cinema implements Comparable<Seance> {
         this.close = close;
     }
 
-    public TreeMap<WeekDays, Schedule> getSchedule() {
+    public TreeMap<WeekDays, Seance> getSchedule() {
         return schedule;
     }
 
@@ -27,25 +27,17 @@ public class Cinema implements Comparable<Seance> {
         return close;
     }
 
-    public void addSeance(String day, Seance seance) {
+    public void addSeanceForCinema(String day, Seance seance) {
         for (WeekDays value : WeekDays.values()) {
             if (day.equals(value.toString())) {
                 System.out.println("Знайдено " + value);
                 System.out.println(seance.getStartTime().getNewLocalTime() + " Початок сеансу");
                 if (getOpen().getNewLocalTime().getHour() <= seance.getStartTime().getHour()) {
                     System.out.println("Час сеансу дозволений");
-                    schedule.put(WeekDays.MONDAY, new Schedule());
+                    System.out.println(getSchedule().values());
+                    schedule.put(WeekDays.MONDAY, seance);
+//                    schedule.put(WeekDays.MONDAY, Schedule.addSeanceForSchedule(seance.getMovie(), seance.getStartTime()));
                     System.out.println(schedule.values());
-
-//                    Set<Seance> seanceSet = new TreeSet<>();
-//                    Schedule schedule1 = new Schedule(seanceSet);
-
-//                    Set<Seance> seanceSet = new TreeSet<>();
-//                    Schedule schedule1 = new Schedule();
-//                getSchedule().put(value, seanceSet)
-//                    TreeMap<WeekDays, Schedule> schedule = new TreeMap<>();
-//                    schedule1.getSeanceSet()
-//                    schedule.put(value, new Schedule());
 
                 } else {
                     System.out.println("Час сеансу НЕ дозволений, бо cinema працює із "

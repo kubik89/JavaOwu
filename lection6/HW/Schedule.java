@@ -15,7 +15,7 @@ public class Schedule {
         return seanceSet;
     }
 
-    public void addSeance(Movie movie, Time startTime) {
+    public void addSeanceForSchedule(Movie movie, Time startTime) {
         seanceSet.add(new Seance(movie, startTime));
 //        System.out.println(getSeanceSet());
 //        for (Seance seance : getSeanceSet()) {
@@ -23,7 +23,7 @@ public class Schedule {
 //        }
     }
 
-    public void removeSeance(String seanceTitle) {
+    public void removeSeanceFromShedule(String seanceTitle) {
         getSeanceSet().removeIf(seance -> seance.getMovie().getTitle().equals(seanceTitle));
 
     }
