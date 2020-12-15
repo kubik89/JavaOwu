@@ -10,7 +10,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Time time1 = new Time(10, 5);
-        Time time2 = new Time(2, 26);
+        Time time2 = new Time(12, 26);
         Time time3 = new Time(1, 45);
         Time open1 = new Time(10, 0);
         Time close1 = new Time(23, 59);
@@ -41,7 +41,13 @@ public class Main {
 //
         Cinema cinema1 = new Cinema(open1, close1);
         cinema1.addSeanceForCinema("FRIDAY", seance1);
+        cinema1.addSeanceForCinema("MONDAY", seance2);
 //        cinema1.addSeances("MONDAY", new Seance(movie1, time1));
+
+//        System.out.println("Стартую планування");
+        cinema1.removeMovie("Movie2");
+
+        System.out.println(schedules.getSeanceSet());
 
 
 //        TreeMap<WeekDays, Schedule> schedule = new TreeMap<>();

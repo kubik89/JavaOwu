@@ -35,8 +35,8 @@ public class Cinema implements Comparable<Seance> {
                 if (getOpen().getNewLocalTime().getHour() <= seance.getStartTime().getHour()) {
                     System.out.println("Час сеансу дозволений");
                     System.out.println(getSchedule().values());
-                    schedule.put(WeekDays.MONDAY, seance);
-//                    schedule.put(WeekDays.MONDAY, Schedule.addSeanceForSchedule(seance.getMovie(), seance.getStartTime()));
+                    Schedule schedule1 = new Schedule();
+                    schedule.put(value, schedule1.addSeanceForSchedule(seance.getMovie(), seance.getStartTime()));
                     System.out.println(schedule.values());
 
                 } else {
@@ -47,8 +47,14 @@ public class Cinema implements Comparable<Seance> {
         }
     }
 
+    public void removeMovie(String title) {
+        schedule.values().removeIf(value -> value.getMovie().getTitle().equals(title));
+    }
+
     @Override
     public int compareTo(Seance seance) {
-        return 0;
+        if (this.getOpen().getHour() != seance.getStartTime().getHour()) {
+            return 1;
+        } else return 0;
     }
 }

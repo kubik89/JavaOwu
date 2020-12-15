@@ -15,12 +15,9 @@ public class Schedule {
         return seanceSet;
     }
 
-    public void addSeanceForSchedule(Movie movie, Time startTime) {
+    public Seance addSeanceForSchedule(Movie movie, Time startTime) {
         seanceSet.add(new Seance(movie, startTime));
-//        System.out.println(getSeanceSet());
-//        for (Seance seance : getSeanceSet()) {
-//            System.out.println(seance.getMovie().getTitle());
-//        }
+        return new Seance(movie, startTime);
     }
 
     public void removeSeanceFromShedule(String seanceTitle) {
