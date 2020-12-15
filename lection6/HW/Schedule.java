@@ -27,4 +27,11 @@ public class Schedule {
         getSeanceSet().removeIf(seance -> seance.getMovie().getTitle().equals(seanceTitle));
 
     }
+
+    @Override
+    public String toString() {
+        return "Schedule{" +
+                "seanceSet=" + seanceSet +
+                '}';
+    }
 }
