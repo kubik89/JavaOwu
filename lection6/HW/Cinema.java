@@ -34,7 +34,7 @@ public class Cinema implements Comparable<Seance> {
                 System.out.println(seance.getStartTime().getNewLocalTime() + " Початок сеансу");
                 if (getOpen().getNewLocalTime().getHour() <= seance.getStartTime().getHour()) {
                     System.out.println("Час сеансу дозволений");
-                    schedule.put(WeekDays.MONDAY, new Schedule(new TreeSet<>()));
+                    schedule.put(WeekDays.MONDAY, new Schedule());
                     System.out.println(schedule.values());
 
 //                    Set<Seance> seanceSet = new TreeSet<>();

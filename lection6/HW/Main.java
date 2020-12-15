@@ -28,18 +28,19 @@ public class Main {
 //        Seance seance3 = new Seance(movie3, time3);
 //        System.out.println(seance1.getEndTime());
 
-        Set<Seance> seanceSet = new TreeSet<>();
+//        Set<Seance> seanceSet = new TreeSet<>();
 
-        Schedule schedule1 = new Schedule(seanceSet);
-        schedule1.addSeance(movie1, time1, seanceSet);
-        Schedule schedule2 = new Schedule(seanceSet);
-        schedule2.addSeance(movie2, time2, seanceSet);
+        Schedule schedules = new Schedule();
+        schedules.addSeance(movie1, time1);
+        schedules.addSeance(movie2, time2);
 
-        schedule2.removeSeance(seanceSet, "Movie2");
-        System.out.println(seanceSet);
+        System.out.println(schedules.getSeanceSet());
 
-        Cinema cinema1 = new Cinema(open1, close1);
-        cinema1.addSeance("FRIDAY", seance1);
+        schedules.removeSeance("Movie2");
+        System.out.println(schedules.getSeanceSet());
+//
+//        Cinema cinema1 = new Cinema(open1, close1);
+//        cinema1.addSeance("FRIDAY", seance1);
 //        cinema1.addSeances("MONDAY", new Seance(movie1, time1));
 
 
