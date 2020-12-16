@@ -6,11 +6,6 @@ import java.util.TreeSet;
 public class Schedule {
     private Set<Seance> seanceSet = new TreeSet<>();
 
-//    public Schedule(Set<Seance> seanceSet) {
-//        new TreeSet<Seance>();
-//        this.seanceSet = seanceSet;
-//    }
-
     public Set<Seance> getSeanceSet() {
         return seanceSet;
     }

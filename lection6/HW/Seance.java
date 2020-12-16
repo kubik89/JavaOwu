@@ -1,11 +1,6 @@
 package lection6.HW;
 
-import java.time.Duration;
-import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Set;
-import java.util.TreeSet;
 
 public class Seance implements Comparable<Seance> {
     private Movie movie;
@@ -26,24 +21,8 @@ public class Seance implements Comparable<Seance> {
         return movie;
     }
 
-    public void setMovie(Movie movie) {
-        this.movie = movie;
-    }
-
     public Time getStartTime() {
         return startTime;
-    }
-
-    public void setStartTime(Time startTime) {
-        this.startTime = startTime;
-    }
-
-    public LocalTime getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(LocalTime endTime) {
-        this.endTime = endTime;
     }
 
     @Override
@@ -64,6 +43,4 @@ public class Seance implements Comparable<Seance> {
         }
         return 0;
     }
-
-
 }
