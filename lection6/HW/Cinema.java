@@ -1,9 +1,6 @@
 package lection6.HW;
 
-import java.util.Map;
-import java.util.Set;
 import java.util.TreeMap;
-import java.util.TreeSet;
 
 public class Cinema implements Comparable<Seance> {
     private TreeMap<WeekDays, Seance> schedule = new TreeMap<>();
@@ -30,14 +27,12 @@ public class Cinema implements Comparable<Seance> {
     public void addSeanceForCinema(String day, Seance seance) {
         for (WeekDays value : WeekDays.values()) {
             if (day.equals(value.toString())) {
-                System.out.println("Знайдено " + value);
                 System.out.println(seance.getStartTime().getNewLocalTime() + " Початок сеансу");
                 if (getOpen().getNewLocalTime().getHour() <= seance.getStartTime().getHour()) {
                     System.out.println("Час сеансу дозволений");
-                    System.out.println(getSchedule().values());
                     Schedule schedule1 = new Schedule();
                     schedule.put(value, schedule1.addSeanceForSchedule(seance.getMovie(), seance.getStartTime()));
-                    System.out.println(schedule.values());
+//                    System.out.println(schedule.values());
 
                 } else {
                     System.out.println("Час сеансу НЕ дозволений, бо cinema працює із "
@@ -54,7 +49,6 @@ public class Cinema implements Comparable<Seance> {
 
 //    видаляє конкретний сеанс фільму в конкретний день, який задається параметром
     public void removeMovieAtDay(String title, WeekDays days) {
-        System.out.println(schedule.values());
         for (Seance value : schedule.values()) {
             if (value.getMovie().getTitle().equals(title)) {
                 if (schedule.containsKey(days)) {
