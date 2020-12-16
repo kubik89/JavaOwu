@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
         Time time1 = new Time(10, 5);
         Time time2 = new Time(12, 26);
-        Time time3 = new Time(1, 45);
+        Time time3 = new Time(15, 45);
         Time open1 = new Time(10, 0);
         Time close1 = new Time(23, 59);
 //        System.out.println(time1.getNewLocalTime());
@@ -30,24 +30,29 @@ public class Main {
 
 //        Set<Seance> seanceSet = new TreeSet<>();
 
-        Schedule schedules = new Schedule();
-        schedules.addSeanceForSchedule(movie1, time1);
-        schedules.addSeanceForSchedule(movie2, time2);
-        schedules.addSeanceForSchedule(movie3, time3);
-        System.out.println(schedules.getSeanceSet());
+//        Schedule schedules = new Schedule();
+//        schedules.addSeanceForSchedule(movie1, time1);
+//        schedules.addSeanceForSchedule(movie2, time2);
+//        schedules.addSeanceForSchedule(movie3, time3);
+//        schedules.addSeanceForSchedule(movie2, time1);
+//        System.out.println(schedules.getSeanceSet());
 
-        schedules.removeSeanceFromShedule("Movie2");
-        System.out.println(schedules.getSeanceSet());
+//        schedules.removeSeanceFromShedule("Movie2");
+//        System.out.println(schedules.getSeanceSet());
 //
         Cinema cinema1 = new Cinema(open1, close1);
         cinema1.addSeanceForCinema("FRIDAY", seance1);
         cinema1.addSeanceForCinema("MONDAY", seance2);
-//        cinema1.addSeances("MONDAY", new Seance(movie1, time1));
+        cinema1.addSeanceForCinema("TUESDAY", seance3);
+        cinema1.addSeanceForCinema("SUNDAY", seance2);
 
 //        System.out.println("Стартую планування");
         cinema1.removeMovie("Movie2");
 
-        System.out.println(schedules.getSeanceSet());
+        System.out.println("removeMovieAtDay");
+        cinema1.removeMovieAtDay("Movie1", WeekDays.FRIDAY);
+
+        System.out.println(cinema1.getSchedule());
 
 
 //        TreeMap<WeekDays, Schedule> schedule = new TreeMap<>();

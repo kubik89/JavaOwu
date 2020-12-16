@@ -47,8 +47,22 @@ public class Cinema implements Comparable<Seance> {
         }
     }
 
+    //    (повністю видаляє усі сеанси вказаного фільму з розкладу)
     public void removeMovie(String title) {
         schedule.values().removeIf(value -> value.getMovie().getTitle().equals(title));
+    }
+
+//    видаляє конкретний сеанс фільму в конкретний день, який задається параметром
+    public void removeMovieAtDay(String title, WeekDays days) {
+        System.out.println(schedule.values());
+        for (Seance value : schedule.values()) {
+            if (value.getMovie().getTitle().equals(title)) {
+                if (schedule.containsKey(days)) {
+                    schedule.values().remove(schedule.get(days));
+                }
+            }
+        }
+
     }
 
     @Override
