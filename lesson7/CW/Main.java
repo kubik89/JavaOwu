@@ -5,6 +5,8 @@ import lection5.practicTask.Person;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.OptionalDouble;
 import java.util.function.*;
 import java.util.stream.Collectors;
 
@@ -78,6 +80,7 @@ public class Main {
         List<Person> list = new ArrayList<>();
         list.add(new Person(3, "Katya", 25));
         list.add(new Person(2, "Vova", 30));
+        list.add(new Person(1, "Semen", 60));
         list.add(new Person(4, "Roman", 20));
 
 //       -- виводжу весь ліст на екран
@@ -111,6 +114,35 @@ public class Main {
 //        List<Integer> collect4 = collect3.stream().map(value -> value.getId()).collect(Collectors.toList());
         System.out.println(personIDlist);
 
+//        вибрати 3-и перших обєкти і повернути їх у зворотньому порядку
+        List<Person> personList = list.stream()
+                .limit(3)
+                .sorted((person1, t1) -> t1.getAge() - person1.getAge())
+                .collect(Collectors.toList());
+        System.out.println(personList);
+
+//        знайти середній вік людей і вивести 2 лісти:
+//            - старші середнього віку
+//            - молодшці середнього віку
+        OptionalDouble average = list.stream().mapToInt(person1 -> {
+            return LocalDate.now().getYear() - person1.getAge();
+        }).average();
+        System.out.println(average);
+
+        String s1 = list.stream().map(Person::getName).reduce((s, s2) -> s + " _ " + s2).get();
+        System.out.println(s1);
+
+//        // якщо обєкт присутній - повернути його
+//        boolean isPresent = Optional.of(new Person(4, "Iryna", 55)).isPresent();
+
+//        // якщо обєкт присутній - вивести його на екран і додати вік (або виконати дію)
+//        Optional.of(new Person(4, "Iryna", 55)).ifPresent(person2 -> System.out.println(person.getAge()+7));
+
+//      // якщо обєкт null - то нічого не виведеться, ніби заглушка, щоб не отримати помилку NullPointerException
+//        Optional.ofNullable(null).ifPresent(person2 -> System.out.println(person));
+
+//        boolean isPresent = Optional.ofNullable(null).isPresent();
+//        System.out.println(isPresent);
 
 //        System.out.println(list.stream().count());
 //        System.out.println(list.stream().findFirst().get().getName());
