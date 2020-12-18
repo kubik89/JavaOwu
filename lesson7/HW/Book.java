@@ -1,6 +1,6 @@
 package lesson7.HW;
 
-public class Book {
+public class Book implements Comparable<Book>{
     private String name;
     private int pages;
 
@@ -23,5 +23,22 @@ public class Book {
 
     public void setPages(int pages) {
         this.pages = pages;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "name='" + name + '\'' +
+                ", pages=" + pages +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Book book) {
+        int compBookName = book.getName().compareTo(this.getName());
+        if (compBookName == 0) {
+            return 0;
+        }
+        return 1;
     }
 }

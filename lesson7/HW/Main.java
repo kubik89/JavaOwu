@@ -1,17 +1,56 @@
 package lesson7.HW;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        List<Person> personList = new ArrayList<>();
-        personList.add(new Person(1, "Volodymyr", 30, new Book("Book1", 25)));
-        personList.add(new Person(2, "Ihor", 21, new Book("Book2", 50)));
-        personList.add(new Person(3, "Iryna", 18, new Book("Book3", 65)));
-        personList.add(new Person(4, "Olha", 25, new Book("Book4", 57)));
-        personList.add(new Person(5, "Oleksiy", 51, new Book("Book5", 120)));
-        personList.add(new Person(6, "Andriy", 75, new Book("Book6", 70)));
+
+        Book book1 = new Book("Book1", 10);
+        Book book2 = new Book("Book2", 15);
+        Book book3 = new Book("Book3", 25);
+
+        Person p1 = new Person(1, "Volodymyr", 30);
+        Person p2 = new Person(2, "Ihor", 21);
+        Person p3 = new Person(3, "Iryna", 18);
+        Person p4 = new Person(4, "Olha", 25);
+        Person p5 = new Person(5, "Oleksiy", 51);
+        Person p6 = new Person(6, "Andriy", 75);
+
+        p1.addPersonToList(p1);
+        p1.addPersonToList(p2);
+        p1.addPersonToList(p3);
+        p1.addPersonToList(p4);
+        p1.addPersonToList(p5);
+        p1.addPersonToList(p6);
+
+        p1.addBookForPerson(book1, p1);
+        p1.addBookForPerson(book2, p2);
+        p1.addBookForPerson(book3, p1);
+        p1.addBookForPerson(book1, p3);
+        p1.addBookForPerson(book2, p1);
+        p1.addBookForPerson(book3, p4);
+        p1.addBookForPerson(book2, p5);
+        p1.addBookForPerson(book3, p6);
+        p1.addBookForPerson(book1, p6);
+
+        p1.addAllToMap();
+
+
+//        personList.forEach(value -> value.);
+
+//        List<Integer> listPagesofPeople = personList.stream()
+//                .map(value -> value.getBook().getPages())
+//                .collect(Collectors.toList());
+//        System.out.println(listPagesofPeople);
+
+
+
 
 
     }
