@@ -1,19 +1,12 @@
 package lesson7.HW;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 public class Main {
     public static void main(String[] args) {
 
         Book book1 = new Book("Book1", 10);
-        Book book2 = new Book("Book2", 15);
-        Book book3 = new Book("Book3", 25);
+        Book book2 = new Book("Book2", 750);
+        Book book3 = new Book("Book3", 550);
+        Book book4 = new Book("Book4", 65);
 
         Person p1 = new Person(1, "Volodymyr", 30);
         Person p2 = new Person(2, "Ihor", 21);
@@ -31,27 +24,19 @@ public class Main {
 
         p1.addBookForPerson(book1, p1);
         p1.addBookForPerson(book2, p2);
-        p1.addBookForPerson(book3, p1);
+        p1.addBookForPerson(book4, p1);
         p1.addBookForPerson(book1, p3);
-        p1.addBookForPerson(book2, p1);
+        p1.addBookForPerson(book3, p1);
         p1.addBookForPerson(book3, p4);
         p1.addBookForPerson(book2, p5);
         p1.addBookForPerson(book3, p6);
         p1.addBookForPerson(book1, p6);
 
-        p1.addAllToMap();
+        p1.generateMapPersonInteger();
 
+        p1.mapStringBook();
 
-//        personList.forEach(value -> value.);
-
-//        List<Integer> listPagesofPeople = personList.stream()
-//                .map(value -> value.getBook().getPages())
-//                .collect(Collectors.toList());
-//        System.out.println(listPagesofPeople);
-
-
-
-
+        p1.filteredListBook();
 
     }
 }
