@@ -1,8 +1,5 @@
 package lesson7.HW;
 
-import lesson7.HW.Book;
-import lesson7.HW.Person;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -14,7 +11,7 @@ public class ServicePersonBook {
         return listPersonAndBooks;
     }
 
-    //    1. згенерувати мапу <Person, Integer>, де Integer - кількість сторінок усіх книжок, які має людина
+//    1. згенерувати мапу <Person, Integer>, де Integer - кількість сторінок усіх книжок, які має людина
     public void generateMapPersonInteger() {
         Map<Person, Integer> integerMap = new HashMap<>();
         for (Person person : getListPersonAndBooks()) {
@@ -46,8 +43,8 @@ public class ServicePersonBook {
     }
 
 //    3. згенерувати List<Book> відфільтрувавши тільких тих людей,
-//    хто старше 25 років і книжки які мають
-//    більше 500 сторінок
+//      хто старше 25 років і книжки які мають
+//      більше 500 сторінок
 
     public void filteredListBook() {
         List<Book> bookList = new ArrayList<>();
@@ -94,6 +91,5 @@ public class ServicePersonBook {
         listPersonAndBooks.add(p4);
         listPersonAndBooks.add(p5);
         listPersonAndBooks.add(p6);
-
     }
 }
