@@ -1,7 +1,11 @@
 package lesson7.HW;
 
+import javax.swing.*;
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class ServicePersonBook {
 
@@ -11,7 +15,7 @@ public class ServicePersonBook {
         return listPersonAndBooks;
     }
 
-//    1. згенерувати мапу <Person, Integer>, де Integer - кількість сторінок усіх книжок, які має людина
+    //    1. згенерувати мапу <Person, Integer>, де Integer - кількість сторінок усіх книжок, які має людина
     public void generateMapPersonInteger() {
         Map<Person, Integer> integerMap = new HashMap<>();
         for (Person person : getListPersonAndBooks()) {
@@ -26,7 +30,7 @@ public class ServicePersonBook {
 //        }
     }
 
-//    2. згенерувати мапу <String, Book>, де String - ім'я людини, Book - книжка з найбільшою кількістю сторінок
+    //    2. згенерувати мапу <String, Book>, де String - ім'я людини, Book - книжка з найбільшою кількістю сторінок
     public void mapStringBook() {
         Map<String, Book> stringBookMap = new HashMap<>();
         for (Person person : getListPersonAndBooks()) {
@@ -57,7 +61,25 @@ public class ServicePersonBook {
                 }
             }
         }
+        bookList.forEach(System.out::println);
+//        or
 //        System.out.println(bookList);
+    }
+
+    //    3. згенерувати List<Book> відфільтрувавши тільких тих людей,
+//          хто старше 25 років і книжки які мають
+//          більше 500 сторінок
+    public void filteredListBookByStream() {
+        List<List<Book>> collect = getListPersonAndBooks()
+                .stream()
+                .filter(person -> person.getAge() > 25)
+                .map(Person::getBook)
+                .collect(Collectors.toList());
+//        System.out.println(collect);
+        Consumer<Person> personConsumer = person -> person.getBook().stream().filter(book -> book.getPages() > 500);
+        getListPersonAndBooks().stream().forEach(personConsumer);
+
+//        System.out.println(getListPersonAndBooks());
     }
 
     {
