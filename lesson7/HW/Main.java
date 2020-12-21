@@ -5,9 +5,11 @@ public class Main {
 
         ServicePersonBook servicePersonBook = new ServicePersonBook();
 
-        servicePersonBook.generateMapPersonInteger();
-        servicePersonBook.mapStringBook();
+//        servicePersonBook.generateMapPersonInteger();
+//        servicePersonBook.mapStringBook();
         servicePersonBook.filteredListBook();
+
+//        servicePersonBook.filteredListBookByStream();
 
     }
 }
