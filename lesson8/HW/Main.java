@@ -10,7 +10,6 @@ public class Main {
 
         File animals = new File("animals.txt");
 //        List<ZooClub> zooClubList = new ArrayList<>();
-        ZooClub zooClub1 = new ZooClub();
 
         try (FileOutputStream toFile = new FileOutputStream(animals)) {
             toFile.write("Animal1,5,brown\n".getBytes());
@@ -33,8 +32,7 @@ public class Main {
                 String part3 = i.substring(i.indexOf(44) + part2.indexOf(44) + 2);
 
 //                zooClubList.add(new ZooClub(animalName, Integer.parseInt(animalAge), part3));
-                ZooClub zooClub = new ZooClub(animalName, Integer.parseInt(animalAge), part3);
-                System.out.println(zooClub);
+                new ZooClub(animalName, Integer.parseInt(animalAge), part3);
             }
         } catch (IOException e) {
             e.printStackTrace();
