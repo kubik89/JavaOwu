@@ -9,20 +9,30 @@ public class ReadWrite {
     List<ZooClub> zooClubList = new ArrayList<>();
     File animals = new File("animals.txt");
 
+    List<String> animaInfoList = new ArrayList<>();
+
+    {
+        animaInfoList.add("Animal1,5,brown\n");
+        animaInfoList.add("Animal2,6,black\n");
+        animaInfoList.add("Animal3,7,white\n");
+        animaInfoList.add("Animal4,8,orange\n");
+        animaInfoList.add("Animal5,9,silver\n");
+        animaInfoList.add("Animal6,10,yellow\n");
+        animaInfoList.add("Animal7,15,blue-white\n");
+        animaInfoList.add("Animal8,11,red\n");
+        animaInfoList.add("Animal9,16,green\n");
+        animaInfoList.add("Animal10,2,green-orange\n");
+        animaInfoList.add("Animal11,1,white-black\n");
+
+    }
+
     public void writeToFile() {
 
         try (FileOutputStream toFile = new FileOutputStream(animals)) {
-            toFile.write("Animal1,5,brown\n".getBytes());
-            toFile.write("Animal2,6,black\n".getBytes());
-            toFile.write("Animal3,7,white\n".getBytes());
-            toFile.write("Animal4,8,orange\n".getBytes());
-            toFile.write("Animal5,9,silver\n".getBytes());
-            toFile.write("Animal6,10,yellow\n".getBytes());
-            toFile.write("Animal7,15,blue-white\n".getBytes());
-            toFile.write("Animal8,11,red\n".getBytes());
-            toFile.write("Animal9,16,green\n".getBytes());
-            toFile.write("Animal10,2,green-orange\n".getBytes());
-            toFile.write("Animal11,1,white-black\n".getBytes());
+            for (String s : animaInfoList) {
+                toFile.write(s.getBytes());
+            }
+
         } catch (IOException e) {
             System.out.println("Не стоїть кома в одному із обєктів поля");
             e.printStackTrace();
