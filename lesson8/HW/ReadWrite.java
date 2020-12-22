@@ -15,7 +15,7 @@ public class ReadWrite {
         animaInfoList.add("Animal1,5,brown\n");
         animaInfoList.add("Animal2,6,black\n");
         animaInfoList.add("Animal3,7,white\n");
-        animaInfoList.add("Animal4,8,orange\n");
+        animaInfoList.add("Animal4,10,orange\n");
         animaInfoList.add("Animal5,9,silver\n");
         animaInfoList.add("Animal6,10,yellow\n");
         animaInfoList.add("Animal7,15,blue-white\n");
@@ -35,7 +35,7 @@ public class ReadWrite {
 
         } catch (IOException e) {
             System.out.println("Не стоїть кома в одному із обєктів поля");
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
 
@@ -62,7 +62,11 @@ public class ReadWrite {
 //                new ZooClub(animalName, Integer.parseInt(animalAge), part3);
 
         } catch (IOException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
+            System.out.println("Файл не знайдений");
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Формат введення даних невірний");
         }
     }
 
