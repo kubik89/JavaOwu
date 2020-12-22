@@ -1,46 +1,29 @@
 package lesson8.HW;
 
+import java.util.List;
+import java.util.Map;
+
 public class ZooClub {
-    String name;
-    int age;
-    String color;
 
-    public ZooClub(){};
+    private Map<Person, List <Pet>> club;
 
-    public ZooClub(String name) {
-        this.name = name;
+    public ZooClub(Map<Person, List<Pet>> club) {
+        this.club = club;
     }
 
-    public ZooClub(String name, int age) {
-        this.name = name;
-        this.age = age;
+    public Map<Person, List<Pet>> getClub() {
+        return club;
     }
 
-    public ZooClub(String name, int age, String color) {
-        this.name = name;
-        this.age = age;
-        this.color = color;
+    public void setClub(Map<Person, List<Pet>> club) {
+        this.club = club;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-
-    @Override
-    public String toString() {
-        return "ZooClub{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", color='" + color + '\'' +
-                '}';
-    }
+//
+//    @Override
+//    public String toString() {
+//        return "ZooClub{" +
+//                "club=" + club +
+//                '}';
+//    }
 }

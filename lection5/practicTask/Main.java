@@ -1,5 +1,7 @@
 package lection5.practicTask;
 
+import lesson8.HW.ReadWrite;
+
 import java.util.*;
 
 public class Main {
@@ -10,6 +12,10 @@ public class Main {
         Person p1 = new Person(1, "Person1", 25);
         Person p2 = new Person(2, "Person2", 40);
         Person p3 = new Person(3, "Person3", 50);
+
+        ReadWrite readWrite = new ReadWrite();
+        readWrite.writeToFile();
+        readWrite.readFromFile();
 
         Map<Person, List<Pet>> map = new HashMap<>();
         map.put(p1, new ArrayList<>());

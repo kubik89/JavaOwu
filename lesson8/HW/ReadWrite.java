@@ -6,10 +6,10 @@ import java.util.List;
 
 public class ReadWrite {
 
-    List<ZooClub> zooClubList = new ArrayList<>();
-    File animals = new File("animals.txt");
-
+    List<Pet> pets = new ArrayList<>();
     List<String> animaInfoList = new ArrayList<>();
+
+    File animals = new File("animals.txt");
 
     {
         animaInfoList.add("Animal1,5,brown\n");
@@ -46,9 +46,9 @@ public class ReadWrite {
                 String[] split = i.split(",");
                 String name = split[0];
                 String age = split[1];
-                String color = split[2];
-                zooClubList.add(new ZooClub(name, Integer.parseInt(age), color));
-                new ZooClub(name, Integer.parseInt(age), color);
+//                String color = split[2];
+                pets.add(new Pet(name, Integer.parseInt(age)));
+//                new Pet(name, Integer.parseInt(age));
             }
 
             //   АБО Варіант 2
@@ -58,13 +58,22 @@ public class ReadWrite {
 //                String animalAge = part2.substring(0, part2.indexOf(44));
 //                String part3 = i.substring(i.indexOf(44) + part2.indexOf(44) + 2);
 //
-//                zooClubList.add(new ZooClub(animalName, Integer.parseInt(animalAge), part3));
+//                pets.add(new Pet(animalName, Integer.parseInt(animalAge), part3));
 //                new ZooClub(animalName, Integer.parseInt(animalAge), part3);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        zooClubList.forEach(System.out::println);
+    }
+
+    public Pet getPetByName(String name) {
+        Pet pet = new Pet();
+        for (Pet value : pets) {
+            if (value.getPetName().equals(name)) {
+                pet = value;
+                return pet;
+            } else pet = null;
+        }
+        return pet;
     }
 }
-
