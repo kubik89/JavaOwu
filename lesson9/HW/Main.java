@@ -1,10 +1,25 @@
 package lesson9.HW;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         ContentReader contentReader = new ContentReader();
-        contentReader.readFrom();
-        contentReader.lineStorages.forEach(System.out::println);
+        ContentPrinter contentPrinter = new ContentPrinter();
+        Thread readThread = new Thread(contentReader, "Read");
+        Thread writeThread = new Thread(contentPrinter, "Write");
+
+        readThread.start();
+        writeThread.start();
+        readThread.join();
+        writeThread.join();
+
+
+        //        contentReader.readFrom();
+
+//        ContentPrinter contentPrinter = new ContentPrinter();
+//        contentPrinter.lineStorages.forEach(System.out::println);
+//        contentPrinter.getlineStoragesList();
+
+
     }
 }
