@@ -61,12 +61,11 @@ public class ReadWrite {
 //                pets.add(new Pet(animalName, Integer.parseInt(animalAge), part3));
 //                new ZooClub(animalName, Integer.parseInt(animalAge), part3);
 
+        } catch (NumberFormatException e) {
+            System.out.println("Формат введення даних невірний");
         } catch (IOException e) {
 //            e.printStackTrace();
             System.out.println("Файл не знайдений");
-        }
-        catch (NumberFormatException e) {
-            System.out.println("Формат введення даних невірний");
         }
     }
 
