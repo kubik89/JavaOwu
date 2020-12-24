@@ -1,22 +1,29 @@
 package lesson9.HW;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 // Написати клас ContentPrinter, який в потоці виводитиме на екран вміст LineStorage.
-public class ContentPrinter implements Runnable{
+public class ContentPrinter implements Runnable {
 
-    final List<LineStorage> lineStorages = new ArrayList<>();
+    ServiceReadPrint service = new ServiceReadPrint();
+    File newFile = new File("newFile.txt");
 
-    public void writeToList(LineStorage lineStorage) {
-        lineStorages.add(lineStorage);
-        lineStorages.forEach(System.out::println);
+    private void writeToNewFile() {
+        try (FileOutputStream fileOutputStream = new FileOutputStream(newFile)) {
+            System.out.println("Записую рядок з ліста у НОВИЙ файл");
+            for (LineStorage lineStorage : service.lineStorages) {
+                System.out.println(lineStorage);
+                fileOutputStream.write(lineStorage.getText().getBytes());
+            }
+        } catch (IOException fileNotFoundException) {
+            fileNotFoundException.printStackTrace();
+        }
     }
 
     @Override
     public void run() {
-        synchronized (lineStorages){
-        lineStorages.forEach(System.out::println);
-        }
+        writeToNewFile();
     }
 }

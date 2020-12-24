@@ -10,6 +10,10 @@ public class LineStorage {
         this.text = text;
     }
 
+    public String getText() {
+        return text;
+    }
+
     @Override
     public String toString() {
         return "LineStorage{" +

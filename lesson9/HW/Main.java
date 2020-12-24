@@ -5,6 +5,7 @@ public class Main {
 
         ContentReader contentReader = new ContentReader();
         ContentPrinter contentPrinter = new ContentPrinter();
+
         Thread readThread = new Thread(contentReader, "Read");
         Thread writeThread = new Thread(contentPrinter, "Write");
 
@@ -12,14 +13,6 @@ public class Main {
         writeThread.start();
         readThread.join();
         writeThread.join();
-
-
-        //        contentReader.readFrom();
-
-//        ContentPrinter contentPrinter = new ContentPrinter();
-//        contentPrinter.lineStorages.forEach(System.out::println);
-//        contentPrinter.getlineStoragesList();
-
 
     }
 }
